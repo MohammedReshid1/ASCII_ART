@@ -63,28 +63,13 @@ Output looks like:
 
 ASCII Art:
 ====
-█
-█▀▀
 █▀▀▀
+█▀▀ 
+█   
 ====
-
-Notes:
-
-Uses coordinate mapping instead of line-by-line reading which works better for sparse ASCII art. Creates empty grid [[' ', ' ', ...]] and maps (x, y, char) to grid[y][x].
-
-Error handling with try/except for bad data and raise_for_status() for HTTP errors.
-
-Parser uses state tracking (in_table, in_cell) to only grab table data. Buffers rows before adding complete ones.
 
 Known issues:
 - Only works with first table in doc
 - Expects 3 columns exactly
 - Single ASCII art block only
 - Specific to Google Docs format
-
-Future improvements:
-- CLI args for URLs
-- Multiple art blocks
-- Color support
-- File export
-- Better errors
